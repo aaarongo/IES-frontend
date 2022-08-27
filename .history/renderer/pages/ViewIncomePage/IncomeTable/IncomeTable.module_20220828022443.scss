@@ -1,0 +1,15 @@
+@import '/styles/variables.scss';
+
+.table {
+    display: flex;
+    width: 900px;
+    height: 100%;
+    .header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: $h4FontSize;
+        font-weight: $h1FontWeight;
+    }
+}

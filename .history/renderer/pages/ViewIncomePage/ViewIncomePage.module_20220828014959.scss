@@ -1,0 +1,16 @@
+@import '/styles/variables.scss';
+
+.section {
+
+    .content {
+        position: relative;
+        margin-left: 20rem;
+        display: flex;
+        align-items: center;
+        
+        flex-direction: column;
+        width: 100%;
+        font-size: $h2FontSize;
+        font-weight: $h1FontWeight;
+    }
+}

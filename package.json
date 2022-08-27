@@ -15,8 +15,11 @@
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
+    "apexcharts": "^3.35.5",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
+    "material-ui-search-bar": "^1.0.0",
+    "react-apexcharts": "^1.4.0",
     "sass": "^1.54.5"
   },
   "devDependencies": {

@@ -1,0 +1,26 @@
+@import '/styles/variables.scss';
+
+.section {
+    display: flex;
+    height: 100vh;
+
+    .content {
+        position: relative;
+        margin-left: 20rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        .header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: $h4FontSize;
+            font-weight: $h1FontWeight;
+        }
+        .table {
+            flex: 1;
+        }
+    }
+}
