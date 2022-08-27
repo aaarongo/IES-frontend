@@ -1,0 +1,16 @@
+@import '/styles/variables.scss';
+
+.section {
+    display: flex;
+
+    .left {
+        position: fixed;
+    }
+    .right {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}

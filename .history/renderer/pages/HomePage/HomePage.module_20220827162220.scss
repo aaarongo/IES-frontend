@@ -1,0 +1,13 @@
+@import '/styles/variables.scss';
+
+.section {
+    display: flex;
+    flex: 1 10;
+
+    .left {
+
+    }
+    .right {
+        width: 100%;
+    }
+}

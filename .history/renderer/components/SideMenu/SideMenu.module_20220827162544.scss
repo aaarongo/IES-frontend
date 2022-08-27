@@ -1,0 +1,19 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+    width: 20rem;
+    // position: fixed; 
+    // z-index: 1; 
+    // top: 0; 
+    left: 0;
+    background-color: #111; 
+    color: white;
+    overflow-x: hidden; 
+    padding-top: 20px;
+}
+

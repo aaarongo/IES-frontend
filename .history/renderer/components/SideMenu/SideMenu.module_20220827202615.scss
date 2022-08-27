@@ -1,0 +1,63 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+    width: 20rem;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    color: white;
+    overflow-x: hidden; 
+    padding-top: 20px;
+
+    .menu {
+
+        ul {
+            list-style: none;
+            li {
+                display: flex;
+                flex-direction: column;
+                .label {
+                    font-weight: $bodyFontWeight;
+                    font-size: $bodyFontSize;
+                    color: grey;
+                }
+                .sidebar_item {
+                    font-weight: $h5FontWeight;
+                    font-size: $h5FontSize;
+                    gap: 0.1rem;
+                    margin-left: 1rem;
+                    font-size: $h5FontWeight !important;
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(0.5);
+                    }
+
+                    &_selected {
+                        color: $color--primary;
+                    }
+
+                    &_home {
+                        margin-left: 0;
+                        font-weight: $h5FontWeight;
+                        font-size: $h5FontSize;
+                        
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }  
+        }
+    }
+}
+
