@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    .title_bar {
+
+    }
+    .content {
+        flex: 1;
+    }
+}

@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    .title_bar {
+
+    }
+    .content {
+        flex: 1;
+    }
+}

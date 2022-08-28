@@ -1,0 +1,98 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+    width: 20rem;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    color: white;
+    overflow-x: hidden; 
+    padding: 1rem;
+
+    .header {
+        padding: 1rem;
+        .text {
+            color: grey;
+            .upper {
+                font-size: $h5FontSize;
+                font-weight: $h3FontWeight;
+            }
+            .lower {
+                font-size: $body2FontSize;
+                font-weight: $h3FontWeight;
+            }
+        }
+    }
+    .menu {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+
+        ul {
+            list-style: none;
+            li {
+                display: flex;
+                flex-direction: column;
+                .label {
+                    font-weight: $h5FontWeight;
+                    font-size: $h5FontSize;
+                    color: grey;
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.192);
+                    -webkit-user-select: none;
+                }
+                .sidebar_item {
+                    margin-top: 0.4rem;
+                    font-weight: $h5FontWeight;
+                    font-size: $h5FontSize;
+                    gap: 0.1rem;
+                    margin-left: 1rem;
+                    font-size: $h5FontWeight !important;
+                    color: white;
+                    text-decoration: none;
+                    transition: transform 0.32s;
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: translateX(-15px);
+                    }
+
+                    &_selected {
+                        color: $color--primary;
+                        transform: translateX(-15px);
+                    }
+
+                    &_home {
+                        margin-left: 0;
+                        font-weight: $h5FontWeight;
+                        font-size: $h5FontSize;
+                        transform: none !important;
+                        transition: all 0.32s;
+                        
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }  
+        }
+    }
+    .footer {
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        color: grey;
+        .current_user {
+            font-size: $h5FontSize;
+            font-weight: $h3FontWeight;
+        }
+    }
+}
+
