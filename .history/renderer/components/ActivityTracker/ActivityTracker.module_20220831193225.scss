@@ -1,0 +1,15 @@
+@import '/styles/variables.scss';
+
+.container {
+    padding: 0 0.5rem;
+    .box {
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+    
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    .row {
+        display: flex;
+        margin: 1rem 0;
+        justify-content: space-around;
+        gap: 0.5rem;
+        .box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 380px;
+            height: 250px;
+            padding: 1rem;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            &_transactions {
+                background-color: rgba(32, 32, 32);
+                .box_header {
+                    border-bottom: 1px solid white !important;
+                    color: white !important;
+                }
+            }
+            .box_header {
+                width: 100%;
+                border-bottom: 1px solid rgb(65, 65, 65);
+                padding-bottom: 0.2rem;
+                text-align: left;
+                font-size: $h5FontSize;
+                font-weight: $h3FontWeight;
+                text-transform: uppercase;
+                color: grey;
+            }
+            .box_content {
+                &_donut {
+                    display: flex;
+                    align-self: center;
+                    width: 230px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    .row {
+        display: flex;
+        // align-items: top;
+        margin: 1rem 0;
+        justify-content: space-around;
+        gap: 0.5rem;
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50%;
+            // width: 33.33%;
+            padding: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            &_transactions {
+                background-color: rgba(32, 32, 32);
+                .box_header {
+                    color: white !important;
+                }
+            }
+            .box_header {
+                text-align: left;
+                font-size: $h5FontSize;
+                font-weight: $h3FontWeight;
+                text-transform: uppercase;
+                color: black;
+            }
+            .box_content {
+                width: 100%;
+                &_donut {
+                    display: flex;
+                    align-self: center;
+                    width:200px;
+                }
+            }
+        }
+    }
+}

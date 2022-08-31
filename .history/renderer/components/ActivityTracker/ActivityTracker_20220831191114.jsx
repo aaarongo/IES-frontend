@@ -1,0 +1,23 @@
+import React, { useState } from "react";
+import Creatable from "react-select/creatable";
+import { withAsyncPaginate } from "react-select-async-paginate";
+import loadOptions from "./loadOptions";
+import styles from './ActivityTracker.module.scss';
+
+export default function ActivityTracker() {
+    const CreatableAsyncPaginate = withAsyncPaginate(Creatable);
+    const [value, onChange] = useState(null);
+
+  return (
+    <div className={styles.container}>
+        <div className={styles.box}>
+            <div className={styles.header}>
+                Last 30 Days Activities
+            </div>
+            <div className={styles.content}>
+            </div>
+        </div>
+    </div>
+  )
+}
+

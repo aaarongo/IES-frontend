@@ -1,0 +1,10 @@
+@import '/styles/variables.scss';
+
+.container {
+    flex: 1;
+    height: 100%;
+    padding: 0 0.5rem;
+    .header {
+        display: flex;
+    }
+}

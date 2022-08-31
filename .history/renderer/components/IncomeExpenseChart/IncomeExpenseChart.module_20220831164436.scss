@@ -1,0 +1,41 @@
+@import '/styles/variables.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    .row {
+        display: flex;
+        // align-items: top;
+        margin: 1rem 0;
+        justify-content: space-around;
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            // width: 33.33%;
+            padding: 1rem;
+            &_transactions {
+                color: rgb(0, 57, 180);
+                background-color:rgb(236, 235, 235);
+            }
+            .box_header {
+                text-align: left;
+                font-size: $h5FontSize;
+                font-weight: $h2FontWeight;
+                color: black;
+            }
+            .box_content {
+                width: 100%;
+                &_donut {
+                    display: flex;
+                    align-self: center;
+                    width: 230px;
+                }
+            }
+        }
+    }
+}
