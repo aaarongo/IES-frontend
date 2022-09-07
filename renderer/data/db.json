@@ -1,0 +1,42 @@
+{
+    "posts":[
+      {
+        "id":"August 1 2022",
+        "transactions": [
+            {
+                "expense": [
+                    "100 kg carrots | SM City Davao",
+                    "500 cans San Miguel beer | Gaisano Mall Bajada",
+                    "160 kg potatoes | SM Lanang",
+                    "780 bottles Vitamilk | Gaisano Mall Ilustre"
+                 ],
+                "income": [
+                    "Served #O123 | #E293",
+                    "Served #O543 | #E321",
+                    "Served #O133 | #E764",
+                    "Served #O435 | #E543"
+                 ]
+            }
+        ]
+      },
+      {
+        "id":"August 2 2022",
+        "transactions": [
+            {
+                "expense": [
+                    "300 kg carrots | SM City Davao",
+                    "800 cans San Miguel beer | Gaisano Mall Bajada",
+                    "260 kg potatoes | SM Lanang",
+                    "980 bottles Vitamilk | Gaisano Mall Ilustre"
+                 ],
+                "income": [
+                    "Served #O123 | #E293",
+                    "Served #O543 | #E321",
+                    "Served #O133 | #E764",
+                    "Served #O435 | #E543"
+                 ]
+            }
+        ]
+      }
+    ]
+}

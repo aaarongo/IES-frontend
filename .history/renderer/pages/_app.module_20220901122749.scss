@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    .title_bar {
+        width: 100%;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        // z-index: 1;
+        height: fit-content;
+    }
+    .content {
+        flex: 1;
+    }
+}

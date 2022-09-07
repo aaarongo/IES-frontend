@@ -1,0 +1,50 @@
+@import '/styles/variables.scss';
+
+.container {
+    position: relative;
+    flex: 1;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    .box {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        .content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            padding: 1rem;
+            .labels_container {
+                display: flex;
+                width: 100%;
+                .label {
+                    width: 100%;
+                }
+            }
+            .row {
+                display: flex;
+                // flex-direction: row;
+                align-items: center;
+                .date {
+                    white-space: nowrap;
+                    width: fit-content;
+                    padding: 1rem;
+                }
+                .income_expense_box {
+                    display: flex;
+                    .box {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+}

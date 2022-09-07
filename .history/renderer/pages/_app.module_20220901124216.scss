@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    .title_bar {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        // z-index: 1;
+        height: fit-content;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+    .content {
+        overflow: hidden;
+        flex: 1;
+    }
+}

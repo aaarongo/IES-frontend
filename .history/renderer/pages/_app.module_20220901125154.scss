@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    .title_bar {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        height: fit-content;
+    }
+    .content {
+        position: relative;
+        overflow-y: scroll;
+        flex: 1;
+    }
+}
