@@ -2,14 +2,11 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './BigButton.module.scss';
 
-function BigButton({link, label}) {
+function BigButton({onClick, label}) {
   return (
-    <Link 
-    href={link}>
-        <div className={styles.container}>
-            {label}
-        </div>
-    </Link>
+      <button className={styles.container} onClick={onClick}>
+          {label}
+      </button>
   )
 }
 

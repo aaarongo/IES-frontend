@@ -17,9 +17,7 @@ export const UserData =
             "expense": 300
         }, 
         { 
-            "label":"Week 4", 
-            "income": 4000, 
-            "expense": 4004
+            "label":"Week 4"
         }
     ],
     "donutData":[
