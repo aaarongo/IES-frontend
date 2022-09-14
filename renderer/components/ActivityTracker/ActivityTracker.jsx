@@ -19,14 +19,14 @@ const App = () => {
   // const [value, setValue] = React.useState(dayjs());
 
   const [fetchedData, setFetchedData] = useState([]);
-  useEffect(() => {
-        const getData = async () => {
-            const data = await axios
-            .get("https://my-json-server.typicode.com/iyabc/mockend/posts");
-            setFetchedData(data);
-        };
-        getData();
-    }, []);
+  // useEffect(() => {
+  //       const getData = async () => {
+  //           const data = await axios
+  //           .get("https://my-json-server.typicode.com/iyabc/mockend/posts");
+  //           setFetchedData(data);
+  //       };
+  //       getData();
+  //   }, []);
 
   return (
     <div className={styles.container}>
