@@ -2,8 +2,11 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './SideMenu.module.scss';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import { useUser } from "../contexts/UserContext";
 
 function SideMenu({homeState, viewincomeState, viewexpenseState}) {
+    const { employeeName } = useUser();
+
   return (
     <div className={styles.container}>
         <div className={styles.header}>
@@ -37,7 +40,7 @@ function SideMenu({homeState, viewincomeState, viewexpenseState}) {
             </ul>      
         </div>
         <div className={styles.footer}>
-            <div className={styles.current_user}>First Name</div>
+            <div className={styles.current_user}>{employeeName}</div>
             <div className={styles.logout_btn}>
                 <Link 
                 href="/home"
