@@ -20,11 +20,11 @@ function HomePage() {
   const[toDate, setToDate] = useState(dayjs().date(1));
 
   const handleFromDateOnChange = (newDate) => {
-    setFromDate(newDate);
+    setFromDate(dayjs(newDate));
   }
 
   const handleToDateOnChange = (newDate) => {
-    setToDate(newDate);
+    setToDate(dayjs(newDate));
   }
   
   const [verticalBarGraphData, setVerticalBarGraphData] = useState({
@@ -51,6 +51,9 @@ function HomePage() {
   }
   
   const getVerticalBarGraphData = () => {
+    console.log(toDate);
+    // console.log(toDate.add(1, 'month').date(0))
+
     rest.getPost(
       `${INITIAL_URL}/expense/vertical-bar-graph`,
       {
@@ -91,7 +94,7 @@ function HomePage() {
   }
 
   useEffect(() =>{
-    console.log(fromDate);
+    // console.log(fromDate);
     getVerticalBarGraphData();
     getDonutGraphData();
   }, [toDate, fromDate])
