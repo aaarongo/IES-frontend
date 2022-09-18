@@ -5,6 +5,7 @@
     width: 100%;
     // height: 100vh;
     .content {
+        padding-top: 10rem;
         position: relative;
         margin-left: 20rem;
         display: flex;
@@ -37,7 +38,6 @@
 
 .home-page{
     display: flex;
-    padding-top: 1rem;
     margin-left: 20rem;
     &__contents{
         display: flex;
