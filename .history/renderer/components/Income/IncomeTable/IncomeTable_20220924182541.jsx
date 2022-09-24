@@ -46,7 +46,6 @@ export default function IncomeTable() {
       return String(row.incomeDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.dailyIncome).includes(searchValue);
     });
     setRows(filteredRows);
-    setPdfRows(filteredRows);
   };
   const cancelSearch = () => {
     setSearched("");
@@ -61,6 +60,20 @@ export default function IncomeTable() {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const handleOpenDeleteModal = () => { setOpenDeleteModal(true) };
   const handleCloseDeleteModal = () => { setOpenDeleteModal(false) };
+  //show delete button on click
+  function showButtons() {
+    if(selected.length > 0 ){
+      return (
+        <>
+        <Tooltip title="Inactivate Employee/s">
+          <IconButton onClick={handleOpenDeleteModal}>
+            <MediumButton label="Delete" />
+          </IconButton>
+        </Tooltip>
+        </>
+      )
+    } 
+  }
 
   useEffect(() => {
     getIncomeData();
@@ -95,6 +108,25 @@ export default function IncomeTable() {
               disableSelectionOnClick
             />
         </div>
+        <Modal open={openDeleteModal} onClose={handleCloseDeleteModal} >
+            <div className={styles.modal}>
+                <div className={styles.header}>
+                    Confirm Delete
+                </div>
+                <div className={styles.content}>
+                  {arrDeleted.map((item) => {
+                    return (
+                      <div key={item.incomeId}>
+                        {item.incomeCategory}
+                      </div>
+                    )
+                  })}
+                </div>
+                <div className={styles.footer}>
+                    <MediumButton label="Delete" />
+                </div>
+            </div>
+        </Modal>
     </div>
   )
 }

@@ -5,9 +5,9 @@ import MediumButton from '../../Shared/MediumButton/MediumButton';
 import SearchBar from 'material-ui-search-bar';
 import { DataGrid } from '@mui/x-data-grid';
 import EditExpenseModal from '../EditExpenseModal/EditExpenseModal';
+import Rest from '../../../rest/Rest.tsx';
 import DeleteExpenseModal from '../DeleteExpenseModal/DeleteExpenseModal';
-import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
-import { printPdf } from '../../../print/printFunctions';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
@@ -17,14 +17,18 @@ function capitalizeData(data){
 }
 
 export default function ExpenseEditableTable({ reload, expenseEditableData, expenseCategories }) {
+  console.log(expenseEditableData)
   //for pdf
-  const title = 'Escobar - Expense Transactions Data';
+  const title = 'Escobar - Expense Data';
   const pdfColumns = [
-    { header:"ID", dataKey: 'expenseId' },
-    { header:"Category", dataKey: 'expenseCategoryName' },
-    { header:"Description", dataKey: 'expenseDescription' },
-    { header:"Date", dataKey: 'expenseDate' },
-    { header:"Cost", dataKey: 'expenseCost' }
+    { header:"ID", dataKey: 'employeeId' },
+    { header:"First", dataKey: 'employeeFirstName' },
+    { header:"Last", dataKey: 'employeeLastName' },
+    { header:"Address", dataKey: 'employeeAddress' },
+    { header:"Contact", dataKey: 'employeeContactNumber' },
+    { header:"Date Employed", dataKey: 'dateEmployed' },
+    { header:"Posiiton", dataKey: 'employeePositionName' },
+    { header:"Superior", dataKey: 'superiorEmployeeName' }
   ]
   const [pdfRows, setPdfRows] = useState([]);
   //
@@ -39,10 +43,9 @@ export default function ExpenseEditableTable({ reload, expenseEditableData, expe
   const [searched, setSearched] = useState("");
   const requestSearch = (searchValue) => {
     const filteredRows = expenseEditableData.filter((row) => {
-      return row.expenseCategoryName.toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseCost).includes(searchValue);
+      return String(row.expenseId).includes(searchValue) || row.expenseCategoryName.toLowerCase().includes(searchValue.toLowerCase());
       });
       setRows(filteredRows);
-      setPdfRows(filteredRows);
     };
   const cancelSearch = () => {
     setSearched("");
@@ -147,7 +150,6 @@ export default function ExpenseEditableTable({ reload, expenseEditableData, expe
 
   useEffect(() => {
     setRows(expenseEditableData);
-    setPdfRows(expenseEditableData);
   }, [expenseEditableData])
 
   useEffect(() => {
@@ -159,9 +161,6 @@ export default function ExpenseEditableTable({ reload, expenseEditableData, expe
     <div className={styles.header}>
       <div className={styles.left}>
         Expense
-        <Tooltip title='Print Active Employee Data'>
-          <LocalPrintshopIcon className={styles.print_btn} onClick={() => printPdf(title, pdfColumns, pdfRows)}/>
-        </Tooltip>
       </div>
       <div className={styles.right}>
         {showButtons()}

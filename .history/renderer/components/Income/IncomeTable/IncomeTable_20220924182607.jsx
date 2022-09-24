@@ -46,7 +46,6 @@ export default function IncomeTable() {
       return String(row.incomeDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.dailyIncome).includes(searchValue);
     });
     setRows(filteredRows);
-    setPdfRows(filteredRows);
   };
   const cancelSearch = () => {
     setSearched("");

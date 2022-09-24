@@ -36,7 +36,7 @@ export default function ExpenseTable({ expenseData }) {
   const [searched, setSearched] = useState("");
   const requestSearch = (searchValue) => {
     const filteredRows = expenseData.filter((row) => {
-      return String(row.supplyName).toLowerCase().includes(searchValue.toLowerCase()) || String(row.transactionDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseCost).includes(searchValue);
+      return String(row.supplyName).toLowerCase().includes(searchValue.toLowerCase()) || String( row.transactionDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseCost).includes(searchValue);
       });
       setRows(filteredRows);
       setPdfRows(filteredRows);

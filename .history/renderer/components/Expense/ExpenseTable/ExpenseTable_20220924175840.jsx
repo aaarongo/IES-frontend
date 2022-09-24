@@ -14,9 +14,7 @@ export default function ExpenseTable({ expenseData }) {
   const title = 'Escobar - Expense Stock-In Data';
   const pdfColumns = [
     { header:"ID", dataKey: 'transactionId' },
-    { header:"Transaction Date", dataKey: 'transactionDate' },
-    { header:"Supply", dataKey: 'supplyName' },
-    { header:"Cost", dataKey: 'expenseCost' }
+    { header:"First", dataKey: 'transactionDate' }
   ]
   const [pdfRows, setPdfRows] = useState([]);
   //
@@ -36,11 +34,9 @@ export default function ExpenseTable({ expenseData }) {
   const [searched, setSearched] = useState("");
   const requestSearch = (searchValue) => {
     const filteredRows = expenseData.filter((row) => {
-      return String(row.supplyName).toLowerCase().includes(searchValue.toLowerCase()) || String(row.transactionDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseCost).includes(searchValue);
+      return String(row.expenseId).includes(searchValue) || row.expenseName.toLowerCase().includes(searchValue.toLowerCase());
       });
       setRows(filteredRows);
-      setPdfRows(filteredRows);
-
     };
   const cancelSearch = () => {
     setSearched("");
@@ -50,6 +46,7 @@ export default function ExpenseTable({ expenseData }) {
   const [selected, setSelected] = useState("");
   const handleSelect = (ids) => {
     setSelected(ids);
+    // openAfterSelect();
   }
   const [selectedValues, setSelectedValues] = useState([]);
   const handleSelectedValues = () => {
@@ -73,7 +70,6 @@ export default function ExpenseTable({ expenseData }) {
 
   useEffect(() => {
     setRows(expenseData);
-    setPdfRows(expenseData);
   }, [expenseData])
 
   useEffect(() => {

@@ -17,6 +17,7 @@ function capitalizeData(data){
 }
 
 export default function ExpenseEditableTable({ reload, expenseEditableData, expenseCategories }) {
+  console.log(expenseEditableData)
   //for pdf
   const title = 'Escobar - Expense Transactions Data';
   const pdfColumns = [
@@ -39,10 +40,9 @@ export default function ExpenseEditableTable({ reload, expenseEditableData, expe
   const [searched, setSearched] = useState("");
   const requestSearch = (searchValue) => {
     const filteredRows = expenseEditableData.filter((row) => {
-      return row.expenseCategoryName.toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseCost).includes(searchValue);
+      return String(row.expenseId).includes(searchValue) || row.expenseCategoryName.toLowerCase().includes(searchValue.toLowerCase());
       });
       setRows(filteredRows);
-      setPdfRows(filteredRows);
     };
   const cancelSearch = () => {
     setSearched("");
@@ -147,7 +147,6 @@ export default function ExpenseEditableTable({ reload, expenseEditableData, expe
 
   useEffect(() => {
     setRows(expenseEditableData);
-    setPdfRows(expenseEditableData);
   }, [expenseEditableData])
 
   useEffect(() => {

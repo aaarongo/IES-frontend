@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ExpenseTable.module.scss';
 import { Modal, Tooltip } from '@mui/material';
+import MediumButton from '../../Shared/MediumButton/MediumButton';
 import SearchBar from 'material-ui-search-bar';
 import { DataGrid } from '@mui/x-data-grid';
 import ExpenseMoreInfo from '../ExpenseMoreInfo/ExpenseMoreInfo';
@@ -9,14 +10,17 @@ import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import { printPdf } from '../../../print/printFunctions';
 
 export default function ExpenseTable({ expenseData }) {
-  console.log(expenseData)
   //for pdf
   const title = 'Escobar - Expense Stock-In Data';
   const pdfColumns = [
-    { header:"ID", dataKey: 'transactionId' },
-    { header:"Transaction Date", dataKey: 'transactionDate' },
-    { header:"Supply", dataKey: 'supplyName' },
-    { header:"Cost", dataKey: 'expenseCost' }
+    { header:"ID", dataKey: 'employeeId' },
+    { header:"First", dataKey: 'employeeFirstName' },
+    { header:"Last", dataKey: 'employeeLastName' },
+    { header:"Address", dataKey: 'employeeAddress' },
+    { header:"Contact", dataKey: 'employeeContactNumber' },
+    { header:"Date Employed", dataKey: 'dateEmployed' },
+    { header:"Posiiton", dataKey: 'employeePositionName' },
+    { header:"Superior", dataKey: 'superiorEmployeeName' }
   ]
   const [pdfRows, setPdfRows] = useState([]);
   //
@@ -36,11 +40,9 @@ export default function ExpenseTable({ expenseData }) {
   const [searched, setSearched] = useState("");
   const requestSearch = (searchValue) => {
     const filteredRows = expenseData.filter((row) => {
-      return String(row.supplyName).toLowerCase().includes(searchValue.toLowerCase()) || String(row.transactionDate).toLowerCase().includes(searchValue.toLowerCase()) || String(row.expenseCost).includes(searchValue);
+      return String(row.expenseId).includes(searchValue) || row.expenseName.toLowerCase().includes(searchValue.toLowerCase());
       });
       setRows(filteredRows);
-      setPdfRows(filteredRows);
-
     };
   const cancelSearch = () => {
     setSearched("");
@@ -50,6 +52,7 @@ export default function ExpenseTable({ expenseData }) {
   const [selected, setSelected] = useState("");
   const handleSelect = (ids) => {
     setSelected(ids);
+    // openAfterSelect();
   }
   const [selectedValues, setSelectedValues] = useState([]);
   const handleSelectedValues = () => {
@@ -70,10 +73,8 @@ export default function ExpenseTable({ expenseData }) {
     setOpenMoreInfoModal(true); 
   };
   const handleCloseMoreInfoModal = () => { setOpenMoreInfoModal(false); };
-
   useEffect(() => {
     setRows(expenseData);
-    setPdfRows(expenseData);
   }, [expenseData])
 
   useEffect(() => {
